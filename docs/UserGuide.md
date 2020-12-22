@@ -15,14 +15,17 @@ faster than most traditional GUI expense-trackers out there!
 
 This User Guide will show you how to navigate the User Interface (UI), give you step-by-step instructions on using commands, tips and tricks on how to maximise your experience with _Common Cents_ and clarify most doubts that you may have.
 
-The _Common Cents_ interface and commands consist of a few levels: `Application` level, `Account` level and `Entry` level.<br>
-* `Application` level commands deal with interactions with the app itself.<br>
+The _Common Cents_ interface and commands consist of a few levels: `App` level, `Account` level and `Entry` level.<br>
+* `App` level commands deal with interactions with the app itself.<br>
 * `Account` level commands deal with managing the different accounts in the app.<br>
 * `Entry` level commands deal with managing the entries which are either expenses or revenues in an account.
 
 --------------------------------------------------------------------------------------------------------------------
 # 1. Quick Start
-Below are steps to help you set up and start your Common Cents experience!
+
+*(Written by Jordan Yoong)* <br>
+
+Below are steps to help you set up and start your _Common Cents_ experience!
 
 1\. Ensure you have Java `11` or above installed in your Computer.
 
@@ -46,12 +49,14 @@ Note how the app contains some sample expenses and revenues if you have not used
 6\. Refer to the [Features](#5-features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
-[comment]: <> (Copy the blocks below and edit your message)
+
+<div style="page-break-after: always;"></div>
 # 2. How to identify notations
 *(Written by Lim Zi Yang)* <br>
 
 These blocks are a few examples of notations that will be used in this document. Each block and icon 
 has a different meaning so do look out for them under our features.
+
 
 <div markdown="block" class="alert alert-info"> 
 
@@ -85,14 +90,18 @@ Important cautions that needs to be known before using the feature.
 
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 # 3. User Interface Overview
 *(Written by Le Hue Man)* <br>
 
-As you can see, **figure 3-1** below shows the default user interface (UI) of _Common Cents_ with its components.  
+As you can see, **Figure 3-1** below shows the default user interface (UI) of _Common Cents_ with its components.  
 ![annotatedUi](images/commands/annotatedUi.PNG)
 <p align="center"> <sub> <b>Figure 3-1</b>: Default user interface of <i>Common Cents</i> </sub> </p>
 
 You can find the description for each UI component shown in the table below.<br> 
+
+<div style="page-break-after: always;"></div>
 
 UI component | Description
 --------|------------------
@@ -108,6 +117,8 @@ UI component | Description
 *Revenue list* | Displays all the revenues in your current account in a panel.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 # 4. Components
 *(Written by Nicholas Canete)* <br>
 
@@ -118,11 +129,11 @@ available! This will better your experience with _Common Cents_ and your usage o
 ## 4.1 Accounts
 *(Written by Nicholas Canete)* <br>
 
-Accounts in Common Cents are key features that help you better manage, categorise, and organise your finances better. 
-In Common Cents, each account has a unique name, and a unique list of expenses and revenues. 
+Accounts in _Common Cents_ are key features that help you better manage, categorise, and organise your finances better. 
+In _Common Cents_, each account has a unique name, and a unique list of expenses and revenues. 
 You can make as many accounts as you'd like in order to help you better categorise and organise your finances better!<br>
  
-When you first launch Common Cents, a **General Account** is made for you by default, which you may use on top of other
+When you first launch _Common Cents_, a **General Account** is made for you by default, which you may use on top of other
 accounts. You may also make new accounts and switch between them and give them their very own set of expenses and revenues.
 
 ### 4.1.1 Name
@@ -132,43 +143,47 @@ accounts better.
 
 ### 4.1.2 Expense List
 Each account will have an Expense list - that is, a list of transactions that involve expenditure on your end (i.e.
-net outflow of money). In general, expenses keyed into Common Cents have a compulsory Description and Amount, as well as 
+net outflow of money). In general, expenses keyed into _Common Cents_ have a compulsory Description and Amount, as well as 
 optional Tags. In the app user interface, each expense amount will be displayed as a negative value and all the expenses
 will be displayed as a scrollable list.
 
 ### 4.1.3 Revenue List
 Each account will also have a Revenue list - that is, a list of transactions that involve profit from your end (i.e.
-net inflow. of money). Like expenses, revenues keyed into Common Cents have a compulsory Description and Amount, as well as 
+net inflow. of money). Like expenses, revenues keyed into _Common Cents_ have a compulsory Description and Amount, as well as 
 optional Tags. In the app user interface, each revenue amount will be displayed as a positive value and all the revenues
 will be displayed as a scrollable list, right beside the expenses list.
 
 ## 4.2 Entries
 *(Written by Nicholas Canete)* <br>
 
-'Entry' (or 'Entries') is the term used to describe either Expense or Revenue. Each entry input into Common Cents would 
+'Entry' (or 'Entries') is the term used to describe either Expense or Revenue. Each entry input into _Common Cents_ would 
 have compulsory fields - Description, Amount - and optional Tags. 
 
 ### 4.2.1 Category
-Category is the field that specifies the type of Entry input that Common Cents receives from you. It is used in commands
+Category is the field that specifies the type of Entry input that _Common Cents_ receives from you. It is used in commands
 to differentiate entries between Expense and Revenue. You can either specify the category as an `expense` or a `revenue`,
 or `e` or `r` for short and these are not case-sensitive. This documentation uses `expense` or `revenue` as examples in 
 the [Features](#5-features) below.
 
 ### 4.2.2 Description
-Description refers to the textual information that is associated with the Entry that Common Cents receives from you, in
+Description refers to the textual information that is associated with the Entry that _Common Cents_ receives from you, in
 order to provide more information about the Entry.  
 
 ### 4.2.3 Amount 
-Amount is the numeric value associated with the Entry that Common Cents receives from you. All amounts, for both expenses
+Amount is the numeric value associated with the Entry that _Common Cents_ receives from you. All amounts, for both expenses
 and revenues must be given as a positive value.
+
+<div style="page-break-after: always;"></div>
 
 ### 4.2.4 Tags
 Tags refer to short textual prompts attached to an Entry, with the purpose of giving extra information and identity for
-your Entries in Common Cents.
+your Entries in _Common Cents_.
 
 --------------------------------------------------------------------------------------------------------------------
 
 # 5. Features
+*(Written by Jordan Yoong)* <br>
+
 Here are some general notes about the commands in _Common Cents_. 
 
 <div markdown="block" class="alert alert-info">
@@ -196,6 +211,8 @@ Here are some general notes about the commands in _Common Cents_.
 
 The commands are separated into three categories: App-Level commands, Entry-Level commands and Account-Level Commands.
 
+<div style="page-break-after: always;"></div>
+
 Each level interacts with _Common Cents_ differently to maximise your experience. More details about each level are 
 found in its own section below.  
 
@@ -203,6 +220,7 @@ found in its own section below.
 App-Level commands deals with interactions with the app, _Common Cents_, itself.
 
 ### 5.1.1 Viewing help : `help`
+*(Written by Jordan Yoong)* <br>
 
 You can use this command when you are at a lost or want to view an overview of how to use the application.
 This command will return a message explaining how to access the help page (**Figure 5.1-1**). 
@@ -222,6 +240,7 @@ You can click on the `Copy URL` button to copy the link to clipboard and paste i
 <p align="center"> <sub> <b>Figure 5.1-1</b>: Help message </sub> </p>
  
 ### 5.1.2 Exiting the program : `exit`
+*(Written by Jordan Yoong)* <br>
 
 You can use this command when you are done with what you need to do and want to close the application.
 
@@ -242,6 +261,7 @@ You can use this command when you are done with what you need to do and want to 
 Entry-Level commands involve managing the entries which are either expenses or revenues in an account. 
 
 ### 5.2.1 Adding an entry: `add`
+*(Written by Jordan Yoong)* <br>
 
 You can use this command when you want to add an entry (expense/revenue) to the tracker.
 
@@ -282,6 +302,7 @@ You can use this command when you want to add an entry (expense/revenue) to the 
 </div>
 
 ### 5.2.2 Deleting an entry: `delete`
+*(Written by Jordan Yoong)* <br>
 
 You can use this command to remove an entry (expense/revenue) from the tracker when you do not want to keep track of 
 it anymore.
@@ -319,6 +340,7 @@ it anymore.
 </div>
 
 ### 5.2.3 Editing an entry: `edit`
+*(Written by Jordan Yoong)* <br>
 
 You can use this to make edits to any existing entries in the tracker when the details of the entry are wrongly keyed.
 
@@ -392,7 +414,7 @@ description (**Figure 5.2-5**)
 
 <br>![findCommand](images/commands/findCommand.PNG)
 <p align="center"> <sub> <b>Figure 5.2-5</b>: Find command successfully executed </sub> </p>
-
+<div style="page-break-after: always;"></div>
 <div markdown="block" class="alert alert-info"> 
 
 :information_source: **Note:**
@@ -412,11 +434,12 @@ description (**Figure 5.2-5**)
 
 :bulb: **Tip:** When there are a lot of entries, and you want to delete something, 
 you can use `find` to search for it in the list and use [`delete INDEX`](#522-deleting-an-entry-delete) to remove it from the updated
-list, with the updated `ENTRY INDEX`.
+list, with the updated `INDEX`.
 
 </div>
 
 ### 5.2.5 Listing all entries: `list`
+*(Written by Jordan Yoong)* <br>
 
 You can use this command to list all entries in the current account when you want to have an overview of your account.
 
@@ -432,6 +455,7 @@ You can use this command to list all entries in the current account when you wan
 
 
 ### 5.2.6 Clearing all expenses or revenue: `clear`
+*(Written by Jordan Yoong)* <br>
 
 You can use this command to clear all entries from a particular category when you do not need to track them anymore.
  
@@ -487,7 +511,6 @@ The `profit` function will show deficits as a negative number if the total expen
 
 
 ### 5.2.8 Undoing Entry-level commands: `undo`
-
 *(Written by Lim Zi Yang)* <br>
 
 You can use this command to return to the state of the entry prior to the previous command.
@@ -533,11 +556,9 @@ before you exit the app!
 </div>
 
 ## 5.3 Account-level Commands
-
 Account-Level commands involve managing the different accounts in the app. 
 
 ### 5.3.1 Adding new account: `newacc`
-
 *(Written by Lim Zi Yang)* <br>
 
 You can create a new account to manage a different set of entries with this command. 
@@ -566,7 +587,6 @@ You can create a new account to manage a different set of entries with this comm
 </div>
 
 ### 5.3.2 Deleting an account: `deleteacc`
-
 *(Written by Lim Zi Yang)* <br>
 
 You can remove an account by using this command. This command is useful for clearing accounts you are no longer using.
@@ -610,8 +630,9 @@ irreversible action and cannot be undone. Do delete your account with caution!
 
 </div>
 
-### 5.3.3 Editing the name of the current account: `editacc`
+<div style="page-break-after: always;"></div>
 
+### 5.3.3 Editing the name of the current account: `editacc`
 *(Written by Lim Zi Yang)* <br>
 
 You can edit the name of the current account you are on using this command.
@@ -641,7 +662,6 @@ and edit the name from there.
 </div>
 
 ### 5.3.4 Listing accounts you have: `listacc`
-
 *(Written by Lim Zi Yang)* <br>
 
 You can check the accounts you have in the app by using this command. Each account will be numbered with an index and 
@@ -661,7 +681,6 @@ displayed as their names.
 <p align="center"> <sub> <b>Figure 5.3-4</b>: All the accounts are listed in the Result Display </sub> </p>
 
 ### 5.3.5 Switching accounts: `switchacc`
-
 *(Written by Lim Zi Yang)* <br>
 
 You can use this command to switch to the desired account. This is useful if you want to manage entries in the 
@@ -701,12 +720,10 @@ commands anymore. Do confirm the changes made to the entries in the account befo
 
 --------------------------------------------------------------------------------------------------------------------
 # 6. Frequently Asked Questions (FAQ)
-
 This section contains a few frequently asked questions with regard to _Common Cents_.
 
 ## 6.1 General Inquiry
 *(Written by Nicholas Canete)* <br>
-
 
 This section features general questions about _Common Cents_ that are not specific to the features.
 
@@ -753,6 +770,8 @@ Please follow the format of the commands closely in the [Features](#5-features) 
 --------------------------------------------------------------------------------------------------------------------
 
 # 7. Command Summary
+*(Written by Jordan Yoong)* <br>
+
 The table below summarises the above commands in the order of appearance in this User Guide for your reference. 
 
 Action | Format
@@ -762,9 +781,9 @@ Action | Format
 [**Add**](#521-adding-an-entry-add) | `add c/CATEGORY d/DESCRIPTION a/AMOUNT [t/TAG]`
 [**Delete**](#522-deleting-an-entry-delete) | `delete INDEX c/CATEGORY`
 [**Edit**](#523-editing-an-entry-edit) | `edit INDEX c/CATEGORY [d/DESCRIPTION] [a/AMOUNT] [t/TAG]`
-[**Find**](#524-locating-entries-by-description-find) | `find k/KEYWORD [MORE_KEYWORDS]`
+[**Find**](#524-locating-entries-by-description-find) | `find [c/CATEGORY] k/KEYWORD [MORE_KEYWORDS]`
 [**List**](#525-listing-all-entries-list) | `list`
-[**Clear**](#526-clearing-all-expenses-or-revenue-clear) | `clear c/CATEGORY`
+[**Clear**](#526-clearing-all-expenses-or-revenue-clear) | `clear [c/CATEGORY]`
 [**Profit**](#527-calculating-net-profits-based-on-expenses-and-revenues-profit) | `profit`
 [**Undo**](#528-undoing-entry-level-commands-undo) | `undo`
 [**New Account**](#531-adding-new-account-newacc) | `newacc n/NAME`

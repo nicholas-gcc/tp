@@ -25,7 +25,7 @@ Given below are my contributions to the project.
 ### Project Management:
 
 * **Community**:
-  * PRs reviewed (with non-trivial review comments):  
+  * PRs reviewed (with non-trivial changes to codebase):  
   [\#131](https://github.com/AY2021S1-CS2103T-T13-4/tp/pull/131)
   * Reported bugs and suggestions for other teams in the class (examples: 
   [\#207](https://github.com/AY2021S1-CS2103T-W12-1/tp/issues/207),
@@ -34,7 +34,8 @@ Given below are my contributions to the project.
   [\#210](https://github.com/AY2021S1-CS2103T-W12-1/tp/issues/210),
   [\#212](https://github.com/AY2021S1-CS2103T-W12-1/tp/issues/212),
   [\#213](https://github.com/AY2021S1-CS2103T-W12-1/tp/issues/213))
-   
+<div style="page-break-after: always;"></div>
+
 * **Enhancements to existing features**:
    * Wrote tests for existing features to improve code coverage (Pull requests
     [\#91](https://github.com/AY2021S1-CS2103T-T13-4/tp/pull/91), 
@@ -49,7 +50,7 @@ Given below are my contributions to the project.
 * Added documentation for the `profit` command: [#5.2.7](https://ay2021s1-cs2103t-t13-4.github.io/tp/UserGuide.html#527-calculating-net-profits-based-on-expenses-and-revenues-profit)
 
 #### Developer Guide:
-* Added implementation details of the `profit` feature**: [Link](https://ay2021s1-cs2103t-t13-4.github.io/tp/DeveloperGuide.html#calculate-net-profits-feature)
+* Added implementation details of the `profit` feature: [Link](https://ay2021s1-cs2103t-t13-4.github.io/tp/DeveloperGuide.html#calculate-net-profits-feature)
 * Added some details to the use case section
 
 

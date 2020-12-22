@@ -36,7 +36,7 @@ The ***Architecture Diagram*** given above explains the high-level design of the
 
 The rest of the App consists of four components.
 
-* [**`UI`**](#ui-component): The UI of the App.
+* [**`UI`**](#ui-component): The _UI_ of the App.
 * [**`Logic`**](#logic-component): The command executor.
 * [**`Model`**](#model-component): Holds the data of the App in memory.
 * [**`Storage`**](#storage-component): Reads data from, and writes data to, the hard disk.
@@ -44,9 +44,9 @@ The rest of the App consists of four components.
 Each of the four components,
 
 * defines its *API* in an `interface` with the same name as the Component.
-* exposes its functionality using a concrete `{Component Name}Manager` class (which implements the corresponding API `interface` mentioned in the previous point.
+* exposes its functionality using a concrete `{Component Name}Manager` class (which implements the corresponding _API_ `interface` mentioned in the previous point.
 
-For example, the `Logic` component (see the class diagram given below) defines its API in the `Logic.java` interface and exposes its functionality using the `LogicManager.java` class which implements the `Logic` interface.
+For example, the `Logic` component (see the class diagram given below) defines its _API_ in the `Logic.java` interface and exposes its functionality using the `LogicManager.java` class which implements the `Logic` interface.
 
 ![Class Diagram of the Logic Component](images/LogicClassDiagram.png)
 
@@ -60,14 +60,14 @@ The sections below give more details of each component.
 
 ### UI component
 
-The UI component represents elements directly interacting with the user.
+The _UI_ component represents elements directly interacting with the user.
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
 
-**API:** The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `AccountListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class.
+**API:** The _UI_ consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `AccountListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class.
 
-The `UI` component uses JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2021S1-CS2103T-T13-4/tp/tree/master/src/main/java/seedu/cc/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2021S1-CS2103T-T13-4/tp/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses _JavaFx_ _UI_ framework. The layout of these _UI_ parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2021S1-CS2103T-T13-4/tp/tree/master/src/main/java/seedu/cc/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2021S1-CS2103T-T13-4/tp/tree/master/src/main/resources/view/MainWindow.fxml)
 
 [`Ui.java`](https://github.com/AY2021S1-CS2103T-T13-4/tp/tree/master/src/main/java/seedu/cc/ui/Ui.java)
 
@@ -75,7 +75,7 @@ The `UI` component uses JavaFx UI framework. The layout of these UI parts are de
 The `UI` component,
 
 * Executes user commands using the `Logic` component.
-* Listens for changes to `Model` data so that the UI can be updated with the modified data.
+* Listens for changes to `Model` data so that the _UI_ can be updated with the modified data.
 
 ### Logic component
 The Logic component parses and executes the commands. <br>
@@ -90,10 +90,11 @@ The Logic component parses and executes the commands. <br>
 * The command execution can either affect the `ActiveAccount` which in turn affects the `Model` (e.g. adding an expense), 
 or affect the `Model` directly (e.g. adding an account).
 * Based on the changes the command execution made, the `CommandResultFactory` generates a `CommandResult` object which encapsulates
-the result of the command execution and is passed back to the `Ui`,
+the result of the command execution and is passed back to the `Ui`.
+<div style="page-break-after: always;"></div>
 * In addition, the `CommandResult` object can also instruct the `Ui` to perform certain actions, such as displaying help to the user.
 
-Given below is the Sequence Diagram for interactions within the `Logic` component for the `execute("deleteacc 1")` API call.
+Given below is the Sequence Diagram for interactions within the `Logic` component for the `execute("deleteacc 1")` _API_ call.
 
 ![Interactions Inside the Logic Component for the `deleteacc 1` Command](images/DeleteAccountSequenceDiagram.png)
 
@@ -104,7 +105,7 @@ Given below is the Sequence Diagram for interactions within the `Logic` componen
 </div>
 
 ### Model component
-The model component stores the relevant data for _Common Cents_. The model component consist of two key aspects, the `Model` and the `ActiveAccount`<br>
+The model component stores the relevant data for _Common Cents_. The model component consist of two key aspects, the `Model` and the `ActiveAccount`.<br>
 
 ![Structure of the Model Component](images/ModelClassDiagram.png)
 
@@ -112,7 +113,7 @@ The model component stores the relevant data for _Common Cents_. The model compo
 
 The `Model`,
 
-* Responsible for managing the data of Accounts
+* responsible for managing the data of _Common Cents_ which holds all the accounts.
 * stores a `UserPref` object that represents the user’s preferences.
 * stores the CommonCents data.
 * stores an unmodifiable list of Accounts.
@@ -120,20 +121,20 @@ The `Model`,
 
 The `ActiveAccount`,
 
-* Responsible for managing the data of the currently active Account
+* responsible for managing the data of the currently active Account.
 * stores a `Account` object that represents the current Account that the user is managing.
-* stores an `ObservableList<Expense>` that can be `observed` e.g. the UI can be bounde to this list so that the UI automatically updates when the data in the list change.
-* stores an `ObservableList<Revenue>` that can be `observed` e.g. the UI can be bounde to this list so that the UI automatically updates when the data in the list change.
+* stores an `ObservableList<Expense>` that can be `observed` e.g. the _UI_ can be bounde to this list so that the _UI_ automatically updates when the data in the list change.
+* stores an `ObservableList<Revenue>` that can be `observed` e.g. the _UI_ can be bounde to this list so that the _UI_ automatically updates when the data in the list change.
 * stores an `Optional<ActiveAccount>` that represents the previous state of the `ActiveAccount`.
 * does not depend on any of the other four components.
-
+<div style="page-break-after: always;"></div>
 <div markdown="span" class="alert alert-info">
 
 :information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `CommonCents`, which `Entry` references. This allows `CommonCents` to only require one `Tag` object per unique `Tag`, instead of each `Entry` needing their own `Tag` object.<br>
+
 ![BetterModelClassDiagram](images/BetterModelClassDiagram.png)
 
 </div>
-
 
 ### Storage component
 The Storage component deals with save and load user data.
@@ -162,7 +163,7 @@ This section describes some noteworthy details on how certain features are imple
 This feature allows user to add entries to an account.
 
 #### Implementation
-The proposed Edit entries feature is facilitated by `AddCommand`. It extends `Command` and 
+The proposed add entries feature is facilitated by `AddCommand`. It extends `Command` and 
 is identified by `CommonCentsParser` and `AddCommandParser`. The AddCommand interacts 
 with `Account` and the interactions are managed by `ActiveAccount`. As such, it implements the following
 operations: 
@@ -178,6 +179,7 @@ and `ActiveAccount#addRevenue`, and in `Model` as `Model#setAccount`.
 Given below is an example usage scenario and how the find entries mechanism behaves 
 at each step.
 
+<div style="page-break-after: always;"></div>
 * Step 1. The user inputs the edit command to edit the entries of a specified index and entry
 type (Expense or Revenue) from current `ActiveAccount`. `CommandParser` identifies the command word `edit`
 and calls `AddCommandParser#parse(String args)` to parse the input into a valid `AddCommand`.
@@ -205,14 +207,14 @@ The following activity diagram summarizes what happens when a user executes a ne
 ![AddActivityDiagram](images/AddActivityDiagram.png)
 
 
-## Delete feature
+### Delete feature
 *(Written by Jordan Yoong)* <br>
 
 This feature allows the user to delete previously added entries from an account.
 
 #### Implementation
 
-The Delete entries feature is facilitated by `DeleteCommand`. It extends `Command` and 
+The delete entries feature is facilitated by `DeleteCommand`. It extends `Command` and 
 is identified by `CommonCentsParser` and `DeleteCommandParser`. The DeleteCommand interacts 
 with `Account` and the interactions are managed by `ActiveAccount`. As such, it implements the following
 operations: 
@@ -222,6 +224,7 @@ operations:
 
 Given below is an example usage scenario and how the delete mechanism behaves at each step.
 
+<div style="page-break-after: always;"></div>
 * Step 1: The user inputs the delete command to specify which entry to delete in the specified category
 of `ActiveAccount`. `CommandParser` identifies the command word `delete` and calls `DeleteCommandParser#parse(String args)`
 to parse the input into a valid `DeleteCommand`.
@@ -238,7 +241,7 @@ The following sequence diagram shows how a delete entry operation works:
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** Some of the interactions with the utility classes,
 such as `CommandResult` and `Storage` are left out of the sequence diagram as their roles are not significant in the execution
-of the find entries command.
+of the delete entries command.
 </div>
 
 The following activity diagram summarizes what happens when a user executes a new command:
@@ -248,21 +251,21 @@ The following activity diagram summarizes what happens when a user executes a ne
 #### Design consideration
 Explanation why a certain design is chosen.
 
-##### Aspect: How find entries command is parsed
+##### Aspect: How delete entries command is parsed
 * **Choice:** User needs to use prefixes before the keywords.
     * Pros: 
         * Easy to implement as the arguments can be tokenized in the event of inputs with multiple arguments.
         * Allows Parser to filter out invalid commands
     * Cons: Less convenience for the user. 
 
-
+<div style="page-break-after: always;"></div>
 ### Edit entries feature 
 *(Written by Nicholas Canete)* <br>
 
 This feature allows the user to edit existing entries.
   
 #### Implementation
-The proposed Edit entries feature is facilitated by `EditCommand`. It extends `Command` and 
+The proposed edit entries feature is facilitated by `EditCommand`. It extends `Command` and 
 is identified by `CommonCentsParser` and `EditCommandParser`. The EditCommand interacts 
 with `Account` and the interactions are managed by `ActiveAccount`. As such, it implements the following
 operations: 
@@ -319,7 +322,7 @@ specifying index and edited fields alone.
     * Cons: Less convenience for the user, as more typing needs to be done. 
     
 
-## Clear feature
+### Clear feature
 *(Written by Jordan Yoong)* <br>
 
 This feature allows the user to clear previously added entries.
@@ -340,6 +343,7 @@ Given below is an example usage scenario and how the clear command mechanism beh
 of `ActiveAccount`. `CommandParser` identifies the command word `clear` and calls `ClearCommandParser#parse(String args)`
 to parse the input into a valid `ClearCommand`.
 
+<div style="page-break-after: always;"></div>
 * Step 2: `ClearCommand` starts to be executed. In the execution:
     * If user input does not specify a category, both _Expense_ and _Revenue_ Lists will be cleared.
     * If the user input for category matches that of the _Expense_ keyword, Expense List will be cleared.
@@ -415,12 +419,16 @@ The following sequence diagram shows how the undo operation works:
 
 ![UndoSequenceDiagram](images/UndoSequenceDiagram.png)
 
+![UndoSequenceRefDiagram](images/UndoSequenceRefDiagram.png)
+
+
 <div markdown="block" class="alert alert-info">
  
  :information_source: **Note:**:
-
- * The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
- * Some of the interactions with the utility classes, such as `CommandResult`, `CommandResultFactory` and `Storage` are left out of the sequence diagram as their roles are not significant in the execution
+ 
+* The reference diagram should have a notation on the top left of the diagram but due to a limitation of PlantUML, the notation is represented by a title instead.
+* The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+* Some of the interactions with the utility classes, such as `CommandResult` and `Storage` are left out of the sequence diagram as their roles are not significant in the execution
    of the undo command. 
    
 </div>
@@ -429,6 +437,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 ![CommitActivityDiagram](images/CommitActivityDiagram.png)
 
+<div style="page-break-after: always;"></div>
 <div markdown="span" class="alert alert-info">:information_source: **Note:** `ActiveAccount#setPreviousState()` is only called in `add`, `delete`, `edit`, and `clear` commands. 
 Hence, the `undo` command only works on the previously stated _entry-level_ commands.
 
@@ -490,12 +499,16 @@ The following sequence diagram shows how an edit account operation works:
 
 ![EditAccountSequenceDiagram](images/EditAccountSequenceDiagram.png)
 
+![EditAccountSequenceRefDiagram](images/EditAccountSequenceRefDiagram.png)
+
+
 <div markdown="block" class="alert alert-info">
 
 :information_source: **Note:**
 
+* The reference diagram should have a notation on the top left of the diagram but due to a limitation of PlantUML, the notation is represented by a title instead.
 * The lifeline for `EditAccountCommandParser` and `EditAccountCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, their lifeline reach the end of diagram.
-* Some of the interactions with the utility classes, such as `CommandResult`, `CommandResultFactory` and `Storage` are left out of the sequence diagram as their roles are not significant in the execution
+* Some of the interactions with the utility classes, such as `CommandResult` and `Storage` are left out of the sequence diagram as their roles are not significant in the execution
 of the edit account command. 
 
 </div>
@@ -512,7 +525,8 @@ Explanation why a certain design is chosen.
 * **Alternative 1 (current choice):** Accounts can only be edited if they are active.
   * Pros: Easy to implement.
   * Cons: Less flexibility for user.
-
+  
+<div style="page-break-after: always;"></div>
 * **Alternative 2:** Accounts can be edited by retrieving them from the account list with an index input.
   * Pros: More flexibility for user.
   * Cons: It is difficult to implement and manage because we need to consider whether the account to be edited
@@ -605,6 +619,7 @@ Given below is an example usage scenario and how the calculate net profits mecha
 
 The following sequence diagram shows how a calculate net profits operation works: 
 
+<div style="page-break-after: always;"></div>
 ![CalculateProfitSequenceDiagram](images/CalculateProfitSequenceDiagram.png)
 
 <div markdown="block" class="alert alert-info">
@@ -624,8 +639,8 @@ The following activity diagram summarizes what happens when a user executes a ne
 #### Design consideration
 Explanation why a certain design is chosen.
 
-##### Aspect: How calculate net profits executes:
-* Choice: Calculates the net profits by retrieving the expense and revenue lists from the account. 
+##### Aspect: How calculate net profits executes
+* **Choice:** Calculates the net profits by retrieving the expense and revenue lists from the account. 
     * Pros: Easy to implement 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -654,9 +669,9 @@ This section highlights the problems that _Common Cents_ solves by describing th
 * Is reasonably comfortable using CLI apps
 
 **Value proposition**: 
-* Can manage financial entries faster than a typical mouse/GUI driven app
-* Provides a simple UI for business owners to see all the desired information easily
-* Provides an aesthetic UI which is pleasant to the eye
+* Can manage financial entries faster than a typical mouse/_GUI_ driven app
+* Provides a simple _UI_ for business owners to see all the desired information easily
+* Provides an aesthetic _UI_ which is pleasant to the eye
 
 ### User stories
 This section describes the features of _Common Cents_ from an end-user perspective. 
@@ -664,7 +679,7 @@ This section describes the features of _Common Cents_ from an end-user perspecti
 
 :information_source: **Note:** 
 
-Priorities are represented by the number of `*` 
+Priorities are represented by the number of `*`:
 * High (must have) - `* * *` 
 * Medium (nice to have) - `* *` 
 * Low (unlikely to have) - `*`
@@ -675,7 +690,7 @@ Priorities are represented by the number of `*`
 | Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
 | -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
 | `* * *` | user | be able to exit the app |  |
-| `* * *` | user | be able to add my expense/revenues entries to the userboard |  |
+| `* * *` | user | be able to add my expense/revenue entries to the userboard |  |
 | `* * *` | user | be able to delete my expense/revenue entries from the userboard |  |
 | `* * *` | user | view my expenditure by category |  |
 | `* * *` | new user | be able to view a help FAQ on the functionality of the program | navigate through the different aspects of it |
@@ -692,15 +707,14 @@ Priorities are represented by the number of `*`
 | `* *` | user | have an app that is intuitive and easy to use | easily navigate through it |
 | `* *` | user with limited time | have an app that is user friendly and efficient | save time |
 | `* *` | user | be able to use the app in dark mode | protect my eyesight |
-| `* *` | user | have incentive every time I use the app (maybe a little game or puzzle) | be motivated to use it to track my spending more |
+| `* *` | user | have an incentive every time I use the app (maybe a little game or puzzle) | be motivated to use it to track my spending more |
 | `* *` | user | have an app that caters specifically to different types of accounts (business or personal) | efficiently manage my expenses and revenues | 
 | `*` | user | be given tips and tricks on how to use the app to plan my spending | save my money effectively |
 
 ### Use cases 
 This captures different scenarios of how a user will perform tasks while using _Common Cents_. 
-(Update the number once all the use cases are done) (Comment)
 
-(For all use cases below, the **System** is the `CommonCents` and the **Actor** is the `user`, unless specified otherwise)
+For all use cases below, the **System** is the `CommonCents` and the **Actor** is the `user`, unless specified otherwise.
 
 <div markdown="block" class="alert alert-success">
 
@@ -708,7 +722,7 @@ This captures different scenarios of how a user will perform tasks while using _
 
 **MSS**
 
-1.  User requests to add an expense
+1.  User requests to add an expense.
 2.  Common Cents adds the expense to expense list and displays success message.
 
     Use case ends.
@@ -862,8 +876,9 @@ This captures different scenarios of how a user will perform tasks while using _
       Use case resumes at step 1.    
 </div>
 
+<div style="page-break-after: always;"></div>
 <div markdown="block" class="alert alert-success">
-
+ 
 **Use Case: UC09 - Undoing an add command**
 
 **MSS**
@@ -906,6 +921,7 @@ This captures different scenarios of how a user will perform tasks while using _
 3.  Common Cents returns to the state prior to the clear expenses command and displays success message.
 </div>
 
+<div style="page-break-after: always;"></div>
 <div markdown="block" class="alert alert-success">
 
 **Use Case: UC13 - Undoing a clear all revenues command**
@@ -949,8 +965,9 @@ This captures different scenarios of how a user will perform tasks while using _
       Use case resumes at step 1.
 </div>
 
+<div style="page-break-after: always;"></div>
 <div markdown="block" class="alert alert-success">
-
+ 
 **Use Case: UC15 - Finding specific revenues**
 
 **MSS**
@@ -1031,7 +1048,7 @@ This captures different scenarios of how a user will perform tasks while using _
 
 **MSS**
 
-1. User requests to find some specific entries (UC16).
+1. User requests to <u> find some specific entries (UC16)</u>.
 2. User requests to list all entries.
 3. Commmon Cents displays all entries again before find command was used.
 
@@ -1046,7 +1063,7 @@ This captures different scenarios of how a user will perform tasks while using _
 **MSS**
 
 1. User request to add a new account.
-2. Common Cents adds account to account list and displays success message
+2. Common Cents adds account to account list and displays success message.
 
     Use case ends.
 
@@ -1067,37 +1084,11 @@ This captures different scenarios of how a user will perform tasks while using _
 
 <div markdown="block" class="alert alert-success">
 
-**Use Case: UC20 - Adding an account**
+**Use Case: UC20 - Listing accounts**
 
 **MSS**
 
-1. User request to add a new account.
-2. Common Cents adds account to account list and displays success message
-
-    Use case ends.
-
-**Extensions**
-
-* 1a. The given command input is in invalid format.
-
-    * 1a1. Common Cents shows an error message.
-
-      Use case resumes at step 1.
-      
-* 1b. The account to be added has the same name as an existing account in Common Cents.
-
-    * 1b1. Common Cents shows an error message.
-
-      Use case resumes at step 1.
-</div>
-
-<div markdown="block" class="alert alert-success">
-
-**Use Case: UC21 - Listing accounts**
-
-**MSS**
-
-1.  User requests to list all the accounts
+1.  User requests to list all the accounts.
 2.  Common Cents displays the name of the accounts and their indices.
 
     Use case ends.
@@ -1105,11 +1096,11 @@ This captures different scenarios of how a user will perform tasks while using _
 
 <div markdown="block" class="alert alert-success">
 
-**Use Case: UC22 - Delete an account**
+**Use Case: UC21 - Delete an account**
 
 **MSS**
 
-1.  User requests <u> list all the account (UC)</u>.
+1.  User requests <u> list all the accounts (UC20)</u>.
 2.  User requests to delete account.
 3.  Common Cents removes the account from the account list and displays success message.
 
@@ -1136,11 +1127,11 @@ This captures different scenarios of how a user will perform tasks while using _
 
 <div markdown="block" class="alert alert-success">
 
-**Use Case: UC23 - Editing the account's name**
+**Use Case: UC22 - Editing the account's name**
 
 **MSS**
 
-1.  User requests <u> list all the account (UC)</u>.
+1.  User requests <u> list all the accounts (UC20)</u>.
 2.  User requests to edit the account's name.
 3.  Common Cents edits the account name displays success message.
 
@@ -1169,11 +1160,11 @@ This captures different scenarios of how a user will perform tasks while using _
 
 <div markdown="block" class="alert alert-success">
 
-**Use Case: UC24 - Switching to an account**
+**Use Case: UC23 - Switching to an account**
 
 **MSS**
 
-1.  User requests <u> list all the account (UC) </u>.
+1.  User requests <u> list all the accounts (UC20) </u>.
 2.  User requests to switch to another account.
 3.  Common Cents switches to another account and displays success message.
 
@@ -1196,11 +1187,11 @@ This captures different scenarios of how a user will perform tasks while using _
 
 <div markdown="block" class="alert alert-success">
 
-**Use Case: UC25 - Exiting app**
+**Use Case: UC24 - Exiting the app**
     
 **MSS**
 
-1.  User requests to exit
+1.  User requests to exit.
 2.  Common Cents responds with exit message and closes.
 
     Use case ends.
@@ -1211,19 +1202,24 @@ This captures different scenarios of how a user will perform tasks while using _
 ### Non-Functional Requirements
 This specifies criteria that can be used to judge the operation of _Common Cents_.
 
-1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 entries per account without a noticeable sluggishness in performance for typical
+1.  Should work on any _Mainstream OS_ as long as it has _Java_ `11` or above installed.
+2.  Should be able to hold up to 1000 entries per account without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-4.  Should be able to perform simple arithmetic with up to 1000 entries without a significant drop in performance
-5.  Should be able to understand the layout of product without much reference to the user guide
-6.  Should be able to hold up to 100 accounts without taking up excess memory
+4.  Should be able to perform simple arithmetic with up to 1000 entries without a significant drop in performance.
+5.  Should be able to understand the layout of the product without much reference to the user guide.
+6.  Should be able to hold up to 100 accounts without taking up excess memory.
 
 ### Glossary
 Definitions of certain terms used in this Developer Guide.
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
-* **Entry-level commands**: Commands that interacts with expenses or revenues.
-* **Account-level commands**: Commands that interacts with accounts.
+* **API**: Application Programming Interface
+* **UI**: User Interface
+* **GUI**: Graphical User Interface
+* **Java**: An object oriented programming language
+* **JavaFX**: Standard Graphical User Interface Library for Java Standard Edition
+* **Entry-level commands**: Commands that interacts with expenses or revenues
+* **Account-level commands**: Commands that interacts with accounts
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -1296,7 +1292,8 @@ Basic instructions to test _entry-level_ commands of _Common Cents_.
       Expected: Similar behaviour with previous testcase. Note that error details may differ based on which parameters of the input that is in an incorrect format.   
 
 1. Finding all entries that have specific keywords
-
+   
+   <div style="page-break-after: always;"></div>
    1. Prerequisites: Delete the existing `CommonCents.json` file in the `data` folder. Use the default data. 
    
    1. Test case: `find c/expense k/canvas`<br>
@@ -1377,6 +1374,7 @@ Basic instructions to test _account-level_ commands of _Common Cents_.
    1. Test case: `deleteacc`, `delete x` (where x is larger than the account list size or smaller than 1)
       Expected: Similar behaviour with previous testcase. Note that error details may differ based on which parameters of the input that is in an incorrect format.   
 
+<div style="page-break-after: always;"></div>
 ### Saving data
 Basic instructions to test saving and loading of user data of _Common Cents_.
 
@@ -1384,7 +1382,7 @@ Basic instructions to test saving and loading of user data of _Common Cents_.
 
    1. Prerequisite: Remove commonCents.json in data folder in the home folder.
    1. Launch _Common Cents_ via CLI
-       1. Expected: CLI displays log stating that data file is not found and a sample data is loaded. Common Cents
+       1. Expected: CLI displays log stating that data file is not found and a sample data is loaded. _Common Cents_
        launches with two accounts, `Default Account 1` and `Default Account 2` and each account has sample expenses and revenues.
 
 --------------------------------------------------------------------------------------------------------------------
@@ -1395,8 +1393,8 @@ This section highlights the team effort to build _Common Cents_ from AB3. While 
 ### Effort
 * Total of 10k LoC written.
 * Total 245 hours of work: 7 hours spent per person per week (total 5 of us).
-* ~30 pages of UG
-* ~40 pages of DG
+* ~30 pages of User Guide written.
+* ~50 pages of Developer Guide written.
 
 ### Challenges
 
